@@ -23,7 +23,7 @@ Ensure that **Ollama** is installed. If not, download and install it from [Ollam
 
 #### 🔹 **Start Ollama & Pull Required Models**  
 ```sh
-ollama serve & ollama pull nomic-embed-text & ollama pull llama3.2:3b & ollama pull deepseek-r1:1.5b
+ollama serve & ollama pull nomic-embed-text & ollama pull llama3.2:3b & ollama pull deepseek-r1:1.5b```
 
 Install Python Dependencies
 sh
