@@ -6,34 +6,6 @@ I am using Ollama based LLM models and Embedding models so the code would learn 
 
 This guide provides instructions to **set up and run Ollama** along with the required models.  
 
----
-
-## 📌 Installation & Setup  
-
-### 📥 **1. Install Dependencies**  
-Ensure that **Ollama** is installed. If not, download and install it from [Ollama AI](https://ollama.ai).  
-
----
-
-### 🚀 **2. Run the Setup Commands**  
-
-#### 🔹 **Start Ollama & Pull Required Models**  
-````sh
-ollama serve & ollama pull nomic-embed-text & ollama pull llama3.2:3b & ollama pull deepseek-r1:1.5b
-🔹 Install Python Dependencies
-sh
-Copy
-Edit
-pip install -r requirements.txt
-This will install all necessary Python libraries required for the project.
-
-
-
-Install Python Dependencies
-sh
-pip install -r requirements.txt
-
-This will install all necessary Python libraries required for the project.
 
 <h2>OVERVIEW</h2>
 
