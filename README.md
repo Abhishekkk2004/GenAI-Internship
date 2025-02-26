@@ -1,4 +1,35 @@
 <h1>GEN AI Internship Task</h1>
+<h2> IMPORTANT NOTE REGARDING THE PROJECT </h2>
+I am using Ollama based LLM models and Embedding models so the code would learn locally
+
+#  Ollama & Model Setup  
+
+This guide provides instructions to **set up and run Ollama** along with the required models:  
+
+ **nomic-embed-text** (Embedding Model)  
+ **llama3.2:3b** (Llama 3.2 - 3B)  
+ **deepseek-r1:1.5b** (DeepSeek R1 - 1.5B)  
+
+---
+
+##  Installation & Setup  
+
+###  **1. Install Dependencies**  
+Ensure that **Ollama** is installed. If not, download and install it from [Ollama AI](https://ollama.ai).  
+
+---
+
+###  **2. Run the Setup Commands**  
+
+#### 🔹 **Start Ollama & Pull Required Models**  
+```sh
+ollama serve & ollama pull nomic-embed-text & ollama pull llama3.2:3b & ollama pull deepseek-r1:1.5b
+
+Install Python Dependencies
+sh
+pip install -r requirements.txt
+
+This will install all necessary Python libraries required for the project.
 
 <h2>OVERVIEW</h2>
 
@@ -33,7 +64,9 @@
 <li> <b>Reason Handling</b> – If classified as "Reason," the input is processed by a DeepSeek-based chain , which acknowledges the reasoning and provides a relevant response. </li> <li> <b>Question Handling</b> – If classified as "Question," the input is processed by a LLama 3.2-based chain , which provides a concise and well-structured answer. </li> 
 <li> <b>Routing Logic</b> – Implements a function (`rout`) to dynamically select the appropriate response chain based on classification results. </li>
 <hr>
+
 <h3> Final RAG chain implementation </h3>
+
 <li> <b>Document Retrieval</b> – Uses a `vector_store.search` function to retrieve the top 5 most relevant documents based on similarity to the user's question. </li> 
 <li> <b>Context Generation</b> – Extracts and combines the content of retrieved documents to provide additional context for answering the question. </li> 
 <li> <b>Dynamic Input Processing</b> – Maps `user_input` and `context` dynamically, ensuring that both the original question and retrieved documents are passed to the response chain. </li> 
