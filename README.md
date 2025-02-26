@@ -6,7 +6,9 @@ I am using Ollama based LLM models and Embedding models so the code would learn 
 
 <p>
 <p> This guide provides instructions to set up and run Ollama along with the required models.
-
+### **Install Dependencies**  
+Make sure you have **Ollama** installed. If not, install it from [Ollama AI](https://ollama.ai).  
+<h3> Shell commands </h3>
 <p> <b>ollama serve </b>
 
 <p> <b>ollama pull nomic-embed-text </b>
