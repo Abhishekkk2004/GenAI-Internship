@@ -16,21 +16,26 @@
 <h3>Web Scrapping</h3>
 <br>
 <li> <b>Requests & Parsing</b> – Sends an HTTP request with a User-Agent and parses the response using BeautifulSoup </li>
-<li> <b>Content Extraction</b> – Extracts the title (h1), headings (h2, h3), and paragraphs (p) from Wikipedia’s main content div. </li>
+<li> <b>Content Extraction</b> – Uses RecursiveCharacterTextSplitter to divide the text into chunks of 700 characters with 200-character overlap. </li>
 <li> <b>File Writing</b> – Saves the extracted text to a file with structured formatting, underlining headings for clarity. </li>
 <li> <b>Error Handling & Execution</b> – Checks response status and runs properly as a standalone script.</li>
 <br>
+<h3>Vector store and data chunking </h3>
+<br>
+<li> <b>Text Loading & Wrapping</b> – Reads Wikipedia text from a file and wraps it in a Document object for processing. </li>
+<li> <b>Text Splitting</b> – Extracts the title (h1), headings (h2, h3), and paragraphs (p) from Wikipedia’s main content div. </li>
+<li> <b>FAISS Index Initialization</b> – Creates a FAISS index for vector storage. </li>
+<li> <b>Vector Store & Document Addition</b> – Initializes FAISS with an embedding function(nomic-embed-text model) , an in-memory docstore, and adds document chunks to the index. </li>
+<br>
+<h3> Making of chains for custom routing</h3>
+<br>
+<li> <b>Classification Step</b> – Uses a prompt template to classify user input as either "Reason" (explanations/justifications) or "Question" (direct inquiries). </li> 
+<li> <b>Reason Handling</b> – If classified as "Reason," the input is processed by a DeepSeek-based chain , which acknowledges the reasoning and provides a relevant response. </li> <li> <b>Question Handling</b> – If classified as "Question," the input is processed by a LLama 3.2-based chain , which provides a concise and well-structured answer. </li> 
+<li> <b>Routing Logic</b> – Implements a function (`rout`) to dynamically select the appropriate response chain based on classification results. </li>
+<br>
+<h3> Final RAG chain implementation </h3>
+<li> <b>Document Retrieval</b> – Uses a `vector_store.search` function to retrieve the top 5 most relevant documents based on similarity to the user's question. </li> 
+<li> <b>Context Generation</b> – Extracts and combines the content of retrieved documents to provide additional context for answering the question. </li> 
+<li> <b>Dynamic Input Processing</b> – Maps `user_input` and `context` dynamically, ensuring that both the original question and retrieved documents are passed to the response chain. </li> 
+<li> <b>Seamless Routing</b> – The retrieved context and user input are passed to the `rout` function, which selects the appropriate response chain based on classification. </li>
 <hr>
-<h2>Future Workings</h2>
-<p>End-to-End Deployment</p>
-<p>Hosting in any cloud service</p>
-<br>
-<h2>Update 1</h2>
-<p>Memory Function implemented. Now it can have memory just like chatgpt corresponding to an individual user id</p>
-<p>Streaming of text while the response is generated</p>
-<p>Better UI/UX</p>
-<br>
-<h2>Upcoming possible updates</h2>
-<p>Integration of ChatPDF with ChatBOT making it an wholesome application</p>
-<p>Better layouts</p>
-<p> Working with agents and tools</p>
