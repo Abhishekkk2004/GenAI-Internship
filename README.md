@@ -14,21 +14,21 @@
 <h2>EXPLAINATION OF EVERY PART </h2>
 
 <h3>Web Scrapping</h3>
-<br>
+
 <li> <b>Requests & Parsing</b> – Sends an HTTP request with a User-Agent and parses the response using BeautifulSoup </li>
 <li> <b>Content Extraction</b> – Uses RecursiveCharacterTextSplitter to divide the text into chunks of 700 characters with 200-character overlap. </li>
 <li> <b>File Writing</b> – Saves the extracted text to a file with structured formatting, underlining headings for clarity. </li>
 <li> <b>Error Handling & Execution</b> – Checks response status and runs properly as a standalone script.</li>
 <hr>
 <h3>Vector store and data chunking </h3>
-<br>
+
 <li> <b>Text Loading & Wrapping</b> – Reads Wikipedia text from a file and wraps it in a Document object for processing. </li>
 <li> <b>Text Splitting</b> – Extracts the title (h1), headings (h2, h3), and paragraphs (p) from Wikipedia’s main content div. </li>
 <li> <b>FAISS Index Initialization</b> – Creates a FAISS index for vector storage. </li>
 <li> <b>Vector Store & Document Addition</b> – Initializes FAISS with an embedding function(nomic-embed-text model) , an in-memory docstore, and adds document chunks to the index. </li>
 <hr>
 <h3> Making of chains for custom routing</h3>
-<br>
+
 <li> <b>Classification Step</b> – Uses a prompt template to classify user input as either "Reason" (explanations/justifications) or "Question" (direct inquiries). </li> 
 <li> <b>Reason Handling</b> – If classified as "Reason," the input is processed by a DeepSeek-based chain , which acknowledges the reasoning and provides a relevant response. </li> <li> <b>Question Handling</b> – If classified as "Question," the input is processed by a LLama 3.2-based chain , which provides a concise and well-structured answer. </li> 
 <li> <b>Routing Logic</b> – Implements a function (`rout`) to dynamically select the appropriate response chain based on classification results. </li>
