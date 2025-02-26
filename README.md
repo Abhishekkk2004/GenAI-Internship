@@ -4,27 +4,19 @@ I am using Ollama based LLM models and Embedding models so the code would learn 
 
 # 🚀 Ollama & Model Setup  
 
-🚀 Ollama & Model Setup
-This guide provides instructions to set up and run Ollama along with the required models.
+<p>
+<p> This guide provides instructions to set up and run Ollama along with the required models.
 
-```bash
-ollama serve
+<p> ollama serve
 
-```bash
-ollama serve
-Pull Required Models
-Next, pull the necessary models:
+<p> ollama pull nomic-embed-text
+<p> ollama pull llama3.2:3b
+<p> ollama pull deepseek-r1:1.5b
 
-```bash
-ollama pull nomic-embed-text
-ollama pull llama3.2:3b
-ollama pull deepseek-r1:1.5b
+<p> Install Python Dependencies
+<p> Install the required Python packages:
 
-Install Python Dependencies
-Install the required Python packages:
-
-```bash
-pip install requirements.txt
+<p> pip install requirements.txt
 
 With these steps completed, you'll have Ollama running and the necessary models and dependencies installed for your GEN AI Internship Task.
 
