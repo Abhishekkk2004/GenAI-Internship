@@ -1,5 +1,6 @@
 <h1>GEN AI Internship Task</h1>
-OVERVIEW
+
+<h2>OVERVIEW</h2>
 
 <p>This project implements a Text Scraping & RAG pipeline that:</p>
 
@@ -9,14 +10,17 @@ OVERVIEW
 <li> Classifies user queries into Reason or Question (Using custom routing between Deepseek r1 and LLama 3.2 LLM )</li>
 <li> Generates responses based on retrieved content using an LLM </li>
 <hr>
-<p>In the next versions, Memory function would be worked upon.</p>
+
+<h2>EXPLAINATION OF EVERY PART </h2>
+
+<h3>Web Scrapping</h3>
 <br>
-<h2>Technologies used</h2>
-<p> Langchain</p>
-<p> Streamlit for hosting</p>
-<p> Ollama Framework LLama LLM model </p>
-<p> Ollama Framework custom LLM model </p>
+<li> <b>Requests & Parsing</b> – Sends an HTTP request with a User-Agent and parses the response using BeautifulSoup </li>
+<li> <b>Content Extraction</b> – Extracts the title (h1), headings (h2, h3), and paragraphs (p) from Wikipedia’s main content div. </li>
+<li> <b>File Writing</b> – Saves the extracted text to a file with structured formatting, underlining headings for clarity. </li>
+<li> <b>Error Handling & Execution</b> – Checks response status and runs properly as a standalone script.</li>
 <br>
+<hr>
 <h2>Future Workings</h2>
 <p>End-to-End Deployment</p>
 <p>Hosting in any cloud service</p>
