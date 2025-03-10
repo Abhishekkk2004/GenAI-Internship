@@ -1,4 +1,4 @@
-<h1>GEN AI Internship Task</h1>
+<h1>GEN AI Internship Task!</h1>
 <h2> IMPORTANT NOTE REGARDING THE PROJECT </h2>
 I am using Ollama based LLM models and Embedding models so the code would learn locally
 
