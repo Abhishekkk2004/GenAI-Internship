@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 from rag_pipline import get_rag_response
 
@@ -116,6 +114,7 @@ with left_col:
 with right_col:
     st.subheader("AI Powered Doctor Suggession")
     response_container = st.empty()
+
 
 # Process the request when button is clicked
 if user_input:
