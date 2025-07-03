@@ -72,6 +72,11 @@ with left_col:
         value=5,
         help="0 = Very fast, 10 = Very slow"
     )
+    st.subheader("Please enter the  image for handwritting test!")
+    uploaded_image = st.file_uploader("Upload an image ", type=["jpg", "png", "jpeg"])
+    
+    if uploaded_image is not None:
+        st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
     
     # Additional context (optional)
     additional_context = st.text_area(
